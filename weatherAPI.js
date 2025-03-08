@@ -1,10 +1,20 @@
 const apiKey = "3287f02eb1532edbc83718c032a6caff"
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=france";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-async function fetchWeatherData() {
-    const weatherData = await fetch(apiUrl+`&appid=${apiKey}`);
+const searchText = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button");
+
+async function fetchWeatherData(city){
+    const weatherData = await fetch(apiUrl+city+`&appid=${apiKey}`);
     var data = await weatherData.json();
-    console.log(data);
+    
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".temp").innerHTML = Math.round(data.main.temp)+"°C";
+    document.querySelector(".humidity").innerHTML = data.main.humidity+"%";
+    document.querySelector(".wind").innerHTML = data.wind.speed+" km/h";
 }
-fetchWeatherData();
+
+searchBtn.addEventListener("click", () => {
+    fetchWeatherData(searchText.value);
+})
 

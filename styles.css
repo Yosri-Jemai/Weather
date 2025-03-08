@@ -10,12 +10,11 @@ body{
 .card{
     background: linear-gradient(135deg, #00feba, #5b548a);
     width: 90%;
-    max-width: 500px;
-    height: 500px;
+    max-width: 470px;
     border-radius: 20px;
     color: #fff;
     text-align: center;
-    margin: 100px auto 0;
+    margin: 90px auto 0;
     padding: 40px 35px;
 }
 
@@ -48,10 +47,52 @@ body{
     height: 60px;
     cursor: pointer;
 }
+.search button:hover{
+    background: #e2eeec;
+}
 
 .search button img{
     width: 24px;
     position: relative;
     top: 5%;
     right: 1%;
+}
+
+.weather-icon{
+    width: 160px;
+    margin-top: 30px;
+}
+.weather h1{
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.weather h2{
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -8px;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: -6px;
 }
